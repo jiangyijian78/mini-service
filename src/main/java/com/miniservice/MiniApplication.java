@@ -14,7 +14,7 @@ import java.net.UnknownHostException;
 public class MiniApplication {
 	private static Logger logger = LoggerFactory.getLogger(MiniApplication.class);
 
-	public static void main(String[] args) throws UnknownHostException {
+	public static void main(String[] args) {
 		SpringApplication app = new SpringApplication(MiniApplication.class);
 		Environment env = app.run(args).getEnvironment();
 

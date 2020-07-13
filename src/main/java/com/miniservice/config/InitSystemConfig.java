@@ -12,11 +12,11 @@ import java.util.Map;
 public class InitSystemConfig implements CommandLineRunner {
 	Logger logger = LoggerFactory.getLogger(InitSystemConfig.class);
 
-	public static Map<String, String> tokenMap;
+	public static Map<String, String> tokenMap = new HashMap<>();
 
 	@Override
 	public void run(String... args) throws Exception {
-		tokenMap = new HashMap<>();
+
 	}
 
 	/**
@@ -40,7 +40,7 @@ public class InitSystemConfig implements CommandLineRunner {
 	 * @param token
 	 * @return
 	 */
-	public synchronized static String cacheByToken(String token, String value) {
+	public static synchronized String cacheByToken(String token, String value) {
 		if (null == tokenMap) {
 			tokenMap = new HashMap<>();
 		}
