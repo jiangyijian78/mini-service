@@ -1,0 +1,26 @@
+spring:
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:~/miniservice;AUTO_SERVER=TRUE
+    username: sa
+    password:
+    data: classpath:config/db/init.sql
+    platform: h2
+  #H2 管理页面配置，path是管理页面的首页
+  h2:
+    console:
+      settings:
+        web-allow-others: true
+      path: /h2-console
+      enabled: true
+
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        
+#swagger config
+swagger:
+  host: localhost:9999
+  url: /mini/api/v1
